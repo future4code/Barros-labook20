@@ -4,9 +4,12 @@ import { BaseDatabase } from "./BaseDatabase"
 
 export class FollowsDatabase extends BaseDatabase {
     follows = async (ids:IdInputDTO)=>{
+        const {id, idUser, idFollower} = ids
         try {
             await FollowsDatabase.connection()
-            .insert(ids)
+            .insert({
+                id,idUser,idFollower
+            })
             .into('labook_followers')
         } catch (error:any) {
             throw new Error(error.message)

@@ -1,4 +1,4 @@
 export type IdsType = {
     idUser: string
-    idFollow: string
+    idFollower: string
 }

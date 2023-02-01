@@ -1,5 +1,4 @@
 import { usersRouter } from './routers/usersRouter';
-import { friendShips } from './endpoints/friendship';
 import express from "express"
 
 import cors from 'cors'

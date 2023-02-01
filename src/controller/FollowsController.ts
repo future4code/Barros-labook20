@@ -11,7 +11,7 @@ export class FollowsController{
 
         const ids: IdsType = {
             idUser,
-            idFollow: idFollow
+            idFollower: idFollow
         }
 
         await this.followsBusines.follows(ids)
@@ -28,7 +28,7 @@ export class FollowsController{
 
         const ids: IdsType = {
             idUser,
-            idFollow: idFollow
+            idFollower: idFollow
         }
 
         await this.followsBusines.unFollow(ids)

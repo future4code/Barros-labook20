@@ -1,0 +1,20 @@
+POST http://localhost:3003/users/create
+Content-Type: application/json
+
+
+###
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+
+###
+GET http://localhost:3003/posts/searchById/:id
+Content-Type: application/json
+
+###
+GET  http://localhost:3003/followers/:id/follow/:idFollow
+Content-Type: application/json
+
+###
+GET  http://localhost:3003/followers/:id/unFollow/:idFollow
+Content-Type: application/json

@@ -7,13 +7,13 @@ export class FollowsBusiness{
 
     follows = async (ids:IdsType)=>{
         try {
-            const {idUser, idFollow} = ids
+            const {idUser, idFollower} = ids
             const id = generateId()
 
             const IDS:IdInputDTO = {
                 id, 
                 idUser,
-                idFollow
+                idFollower
             }
 
         await this.followDatabase.follows(IDS)
@@ -25,11 +25,11 @@ export class FollowsBusiness{
 
     unFollow = async (ids:IdsType)=>{
         try {
-            const {idUser, idFollow} = ids
+            const {idUser, idFollower} = ids
 
             const IDS:IdsType = {
                 idUser,
-                idFollow
+                idFollower
             }
 
         await this.followDatabase.unFollow(IDS)
