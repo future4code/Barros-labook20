@@ -22,4 +22,20 @@ export class FollowsBusiness{
             throw new Error(error.message)
         }
     }
+
+    unFollow = async (ids:IdsType)=>{
+        try {
+            const {idUser, idFollow} = ids
+
+            const IDS:IdsType = {
+                idUser,
+                idFollow
+            }
+
+        await this.followDatabase.unFollow(IDS)
+        
+        } catch (error:any) {
+            throw new Error(error.message)
+        }
+    }
 }
