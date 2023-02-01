@@ -21,4 +21,21 @@ export class FollowsController{
         res.status(400).send(error.message)
       }
     }
+
+    unFollow = async (req:Request, res:Response)=>{
+      try {
+        const {idUser, idFollow} = req.params
+
+        const ids: IdsType = {
+            idUser,
+            idFollow: idFollow
+        }
+
+        await this.followsBusines.unFollow(ids)
+        res.status(200).send('Voce adicionou uma nova amizade...')
+      } catch (error:any) {
+          throw new Error(error.message);
+          
+      }
+  }
 }
