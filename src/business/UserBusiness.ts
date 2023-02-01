@@ -14,24 +14,4 @@ export class UserBusiness {
             throw new Error(error.message)
         }
     }
-
-    makeFriendship = async ({id, idFriend}:any)=>{
-        try {
-            if(!id) throw new Error('O id do usuario não foi inserido.')
-            if(!idFriend) throw new Error('O id do amigo não foi inserido.')
-    
-            await this.userDatabase.makeFriendship({id, idFriend})
-        } catch (error:any) {
-            throw new Error(error.message)
-        }
-    }
-
-    searchFriends = async ({id}:any)=>{
-        try {
-            const result = await this.userDatabase.searchFriends({id}) 
-            return result
-        } catch (error:any) {
-            throw new Error(error.message)
-        }
-    }
 }

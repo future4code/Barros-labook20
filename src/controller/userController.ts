@@ -14,25 +14,4 @@ export class UserController{
             res.status(400).send(error.message || error.mysql)       
         }
     }
-    makeFriendship = async (req:Request, res:Response)=>{
-        try {
-            // const id = req.query.id
-            // const idFriend = req.query.idFriend
-
-            await this.userBusiness.makeFriendship(req.query)
-            res.status(200).send('SUCESSO: a amizade foi feita com sucesso.')
-        } catch (error:any) {
-           res.status(400).send(error.message)
-        }
-    }
-
-    searchFriends = async (req:Request, res:Response)=>{
-        try {
-            const {id} = req.params
-            const result = await this.userBusiness.searchFriends({id})
-            res.status(200).send(result)
-        } catch (error:any) {
-            res.status(400).send(error.message)
-        }
-    }
 }
