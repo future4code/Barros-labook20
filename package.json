@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev ./src/app.ts",
     "start": "tsc && node ./build/app.js",
-    "migrations":	"tsc && node ./build/migrations.js"
+    "migrations": "tsc && node ./build/migrations.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
   "dependencies": {
     "@types/node": "^18.11.18",
     "dotenv": "^16.0.3",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

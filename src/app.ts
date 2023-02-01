@@ -1,10 +1,10 @@
+import { usersRouter } from './routers/usersRouter';
 import { friendShips } from './endpoints/friendship';
-import { searchPostById } from './endpoints/searchPostById';
-import { createPost } from './endpoints/createPost';
 import express from "express"
 
 import cors from 'cors'
-import { createUsers } from "./endpoints/createUsers"
+import { postsRouter } from './routers/postsRouter';
+import { followerRouter } from './routers/followerRouter';
 
 export const app = express()
 
@@ -16,7 +16,8 @@ app.listen(3003, () => {
     console.log("Server is running in http://localhost:3003");
 });
 
-app.post('/users', createUsers)
-app.post('/post', createPost)
-app.get('/posts/:id', searchPostById)
-app.get('/users/:id/friendShip/:idFriendShip', friendShips)
+app.use('/users', usersRouter)
+app.use('/posts', postsRouter)
+app.use('/followers', followerRouter)
+
+
