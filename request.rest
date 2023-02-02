@@ -1,11 +1,22 @@
 POST http://localhost:3003/users/create
 Content-Type: application/json
 
+{
+    "name":"teste01",
+    "email":"teste01teste.com",
+    "password":"12345"
+}
 
 ###
 
-POST http://localhost:3003/posts/create
+POST http://localhost:3003/posts/create/8263b433-1389-4448-81ac-3548fb5fe797
 Content-Type: application/json
+
+{
+    "photo":"imagem",
+    "description":"meu segundo post",
+    "type":"normal",
+}
 
 ###
 GET http://localhost:3003/posts/searchById/:id

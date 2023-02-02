@@ -9,7 +9,7 @@ export class PostBusiness {
         try {
             const id = generateId()
 
-            if(!id || !photo || !description|| !type || !author_id) throw new Error('Todas a informacoes precisam ser inseridas')
+            if(!id || !photo || !description|| !type || !author_id) throw new Error('Todas a informacoes precisam ser inseridas...')
 
             await this.postDatabase.createPost({id, photo, description, type, author_id})
         } catch (error:any) {

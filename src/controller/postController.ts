@@ -3,12 +3,12 @@ import { Response, Request } from 'express';
 export class postController {
     postBusiness = new PostBusiness();
 
-    createPost = (req:Request, res:Response)=>{
+    createPost = async (req:Request, res:Response)=>{
         try {
             const {author_id} = req.params
             const {photo, description, type} = req.body
 
-            this.postBusiness.createPost({photo, description, type, author_id})
+            await this.postBusiness.createPost({photo, description, type, author_id})
             res.status(200).send('Post foi criado com sucesso...')
         } catch (error:any) {
             res.status(400).send(error.message || error.mysql)
